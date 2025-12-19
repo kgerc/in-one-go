@@ -239,7 +239,7 @@ class GoogleCalendarService {
     // Set start time
     if (event.isAllDay) {
       calendarEvent.start = calendar.EventDateTime(
-        date: calendar.Date(
+        date: DateTime(
           event.startDateTime.year,
           event.startDateTime.month,
           event.startDateTime.day,
@@ -255,7 +255,7 @@ class GoogleCalendarService {
     if (event.endDateTime != null) {
       if (event.isAllDay) {
         calendarEvent.end = calendar.EventDateTime(
-          date: calendar.Date(
+          date: DateTime(
             event.endDateTime!.year,
             event.endDateTime!.month,
             event.endDateTime!.day,
@@ -271,7 +271,7 @@ class GoogleCalendarService {
       final defaultEndTime = event.startDateTime.add(const Duration(hours: 1));
       if (event.isAllDay) {
         calendarEvent.end = calendar.EventDateTime(
-          date: calendar.Date(
+          date: DateTime(
             defaultEndTime.year,
             defaultEndTime.month,
             defaultEndTime.day,
